@@ -1,0 +1,44 @@
+.darlingModule {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 5fr 3fr 1fr;
+  align-items: center;
+  margin-top: 6%;
+  margin-left: 10%;
+  height: 60%;
+  width: 100vmin;
+  background-color: black;
+  color: white;
+}
+
+#frame {
+  height: 90%;
+  margin-top: 25%;
+  background-image: url("../assets/cat.jpg");
+  background-position: 60% 40%;
+  background-size: 100% 88%;
+  background-repeat: no-repeat;
+}
+#infoCat {
+  padding-top: 10%;
+  padding-left: 30%;
+  font-size: 3rem;
+  width: 50rem;
+}
+#clickForFacts {
+  background-color: wheat;
+  color: white;
+  border: 1px solid wheat;
+  box-shadow: 0px 2px 2px 2px white;
+  text-shadow: 1px 2px 2px black;
+  border-radius: 5%;
+  margin-top: 5%;
+  cursor: pointer;
+}
+#clickForFacts:hover {
+  transform: scale(0.9);
+}
+#closeDarlingBtn {
+  border-radius: 40%;
+  align-self: self-end;
+}

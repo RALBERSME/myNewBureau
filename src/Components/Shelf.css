@@ -1,0 +1,106 @@
+.bookshelf {
+  width: 95%;
+  height: 6rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 5.5%;
+  border: none;
+}
+#shelf {
+  position: absolute;
+  left: 7%;
+  top: -7.5%;
+  width: 90%;
+}
+.book {
+  width: 5rem;
+  height: 20rem;
+  position: relative;
+  margin-left: 0.5rem;
+  top: 3rem;
+  transform-style: preserve-3d;
+  transform: translateZ(0) rotateY(0);
+  transition: transform 1s;
+  z-index: 3;
+}
+.side {
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 3px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  transform-origin: center left;
+  width: 15rem;
+  height: 24rem;
+  background: linear-gradient(to right, #83a59d, #d2ebe5, #83a59d);
+  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.3);
+  color: white;
+  transform: rotateY(0deg) translateZ(0px);
+  z-index: 3;
+}
+
+.title {
+  margin: 0.5rem;
+  position: absolute;
+  top: 4rem;
+  left: 35%;
+  font-size: 3rem;
+  color: black;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  z-index: 3;
+}
+
+.top {
+  width: 150px;
+  height: 190px;
+  top: -2px;
+  background-color: #fcfafe;
+  background-size: 5px 5px;
+  transform: rotateX(90deg) translateZ(95px) translateY(-95px);
+  z-index: 3;
+}
+.cover {
+  width: 19rem;
+  height: 24rem;
+  color: #fcfafe;
+  font-size: 5rem;
+  margin-top: -20rem;
+  background-size: contain;
+  background-repeat: round;
+  transform: rotateY(90deg) translateZ(55px) translateX(90px) translateY(10px);
+  transition: transform 1s;
+  z-index: 3;
+}
+.book:hover {
+  z-index: 3;
+  transform: rotateX(-25deg) rotateY(-40deg) rotateZ(-15deg) translateY(40rem)
+    translateX(-12rem) translateZ(0);
+}
+
+#book1 {
+  background-image: url("../assets/book1.png");
+  cursor: pointer;
+}
+#book2 {
+  background-image: url("../assets/book2.png");
+  cursor: pointer;
+}
+#book3 {
+  background-image: url("../assets/book3.png");
+  cursor: pointer;
+}
+#book4 {
+  background-image: url("../assets/book4.png");
+  cursor: pointer;
+}
+#book5 {
+  background-image: url("../assets/book5.png");
+  cursor: pointer;
+}
+#book6 {
+  background-image: url("../assets/book6.png");
+  cursor: pointer;
+}

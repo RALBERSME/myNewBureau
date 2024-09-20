@@ -1,0 +1,71 @@
+.poetryModule {
+  margin-top: 25%;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  width: 20vmin;
+  aspect-ratio: 3/2;
+  background-color: black;
+  color: white;
+}
+.poetryContainer {
+  margin-top: 40%;
+  width: 100%;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.75rem;
+}
+
+#searchPoetryBtn {
+  margin-left: 37rem;
+  margin-top: 22rem;
+  border-radius: 50%;
+  color: rgb(230, 226, 220);
+  border: 2px solid rgb(237, 111, 15);
+  box-shadow: 2px 2px 2px 2px rgb(219, 95, 6);
+  transform: rotateX(-50deg);
+  cursor: pointer;
+}
+#searchPoetryBtn:hover {
+  transform: scale(0.7);
+}
+.showPoetry {
+  position: absolute;
+  top: 45%;
+  left: 35%;
+  height: 44rem;
+  width: 80rem;
+  padding: 25px;
+  overflow-y: scroll;
+  z-index: 8;
+}
+.showPoetry::-webkit-scrollbar {
+  background: rgb(252, 236, 205);
+}
+.showPoetry::-webkit-scrollbar-thumb {
+  background: rgb(251, 206, 123);
+}
+
+.showPoetry::-webkit-scrollbar-thumb:hover {
+  background: rgb(242, 198, 115);
+}
+.poetryDesign {
+  color: rgb(245, 214, 157);
+}
+#leavePoetryPage {
+  position: absolute;
+  border-radius: 40%;
+  width: 5rem;
+  height: 3rem;
+  margin-top: -38%;
+  margin-left: 150%;
+}
+#imagePoem {
+  position: absolute;
+  top: 30%;
+  left: 2.5%;
+  margin-bottom: 5%;
+}

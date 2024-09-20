@@ -1,0 +1,9 @@
+body {
+  height: 100vh;
+  margin: 0 2.5%;
+  background-color: black;
+  overflow: hidden;
+}
+html {
+  font-size: 62.5%;
+}

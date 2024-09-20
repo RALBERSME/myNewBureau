@@ -1,0 +1,350 @@
+.calendarModule {
+  position: relative;
+  margin-top: 14%;
+  display: flex;
+  width: 70%;
+  min-width: 90vmin;
+  height: 60rem;
+  aspect-ratio: 3 / 2;
+  background: linear-gradient(to right bottom, #83a59d, #d7efea);
+  color: black;
+  padding: 3rem;
+  border-radius: 3rem;
+  border: 1rem solid #0f1319;
+  column-gap: 5rem;
+  transform-style: preserve-3d;
+}
+
+.calendar {
+  width: 70%;
+}
+
+.heading {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: clamp(5rem, 4cqi, 10rem);
+  letter-spacing: 0.5rem;
+  padding-left: 1.5rem;
+}
+#callToEnter {
+  font-size: 2rem;
+  padding-left: 15px;
+  color: rgb(242, 242, 194);
+}
+.dateDisplay {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  column-gap: 1rem;
+  margin: 3.5rem 0;
+}
+
+.dateDisplay h2 {
+  font-size: clamp(1.5rem, 1.5cqi, 2.5rem);
+  padding-left: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  column-gap: 1rem;
+  margin-left: auto;
+}
+
+.buttons i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  background-color: #83a59d;
+  border-radius: 20%;
+  font-size: 4rem;
+  color: rgba(255, 69, 0, 0.6);
+  cursor: pointer;
+}
+#btnLeft {
+  margin-left: -1%;
+  margin-right: 3%;
+  width: 5rem;
+  height: 5rem;
+  font-size: 4rem;
+}
+.weekdays {
+  display: flex;
+  width: 100%;
+  margin: 3rem 0 1rem 0;
+}
+
+.weekdays span {
+  width: calc(100% / 7);
+  font-size: clamp(1rem, 1cqi, 1.5rem);
+  font-weight: bold;
+  text-transform: capitalize;
+  color: black;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.days span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.5rem, 1cqi, 1.8rem);
+  width: calc(100% / 7);
+  aspect-ratio: 1;
+  color: rgba(255, 69, 0, 0.6);
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.current-day {
+  position: relative;
+  background-color: rgb(242, 242, 194);
+  border-radius: 50%;
+  color: black;
+  text-align: center;
+}
+.current-day:before,
+.current-day:after {
+  content: "";
+  position: absolute;
+  left: -0.5rem;
+  right: -0.5rem;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  border: 2px dotted rgba(255, 69, 0, 0.2);
+  box-shadow: 0px 0px 2px 2px orangered;
+  border-radius: 50%;
+  animation: highlightDay 1.5s linear infinite;
+}
+
+.current-day:after {
+  animation-delay: 0.5s;
+}
+
+@keyframes highlightDay {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+.entries {
+  margin-left: 5%;
+  margin-top: -5%;
+  width: 100%;
+  height: 70%;
+  overflow-y: auto;
+  z-index: 6;
+}
+
+.entries::-webkit-scrollbar {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  top: -45%;
+  left: 0.5rem;
+  background-color: #d9eae6;
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15l15 15H0V15zM15 0l15 15V0H15z' fill='%239cd1c6' fill-opacity='0.33' fill-rule='evenodd'/%3E%3C/svg%3E");
+  width: clamp(25rem, 20cqi, 40rem);
+  aspect-ratio: 4 / 3;
+  border-radius: 0.5rem;
+  box-shadow: 0 2rem 2rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.timeInput {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.inputTime {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  width: clamp(4rem, 4cqi, 7rem);
+  color: orangered;
+  text-shadow: 1px 1px 2px white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: clamp(1.5rem, 1.5cqi, 2.5rem);
+}
+
+.inputTime input {
+  background-color: transparent;
+  border: none;
+  color: #83a59d;
+  font-weight: bold;
+  width: clamp(4rem, 4cqi, 7rem);
+  height: 4rem;
+  text-align: center;
+  font-size: clamp(1.5rem, 1.5cqi, 2.5rem);
+  padding-bottom: 0.75rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.modal textarea {
+  width: clamp(15rem, 15cqi, 25rem);
+  aspect-ratio: 5 / 2;
+  resize: none;
+  background-color: #0f1319;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  transition: border 0.5s;
+}
+
+.modal textarea:focus {
+  border: 0.3rem solid #78a59b;
+}
+
+.modal textarea::placeholder {
+  font-size: clamp(1.2rem, 1cqi, 1.5rem);
+  color: rgb(242, 242, 194);
+}
+
+.modal textarea:focus::placeholder {
+  color: transparent;
+}
+
+.eventBtn {
+  width: clamp(15rem, 15cqi, 25rem);
+  height: 3rem;
+  background-color: #3c534e;
+  color: #fff;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: clamp(1.5rem, 1.5cqi, 2.2rem);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.eventBtn:active {
+  transform: translateY(0.1rem);
+  color: orangered;
+}
+
+.closeEvent {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#closeEvent {
+  border: none;
+  box-shadow: none;
+  margin-top: 5px;
+}
+.closeEvent i {
+  font-size: 2.5rem;
+  color: rgb(242, 242, 194);
+}
+.fa-window-close {
+  background-color: #3c534e;
+  color: rgb(242, 242, 194);
+}
+.eventBox {
+  position: absolute;
+  top: 5%;
+  left: 35%;
+  width: 75rem;
+  height: 50rem;
+  overflow-y: scroll;
+}
+.eventBox::-webkit-scrollbar {
+  background: #3c534e;
+}
+.eventBox::-webkit-scrollbar-thumb {
+  background: #98e8d7;
+}
+
+.eventBox::-webkit-scrollbar-thumb:hover {
+  background: #3ef4cc;
+}
+.event {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 7rem;
+  background-color: #d9eae6;
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15l15 15H0V15zM15 0l15 15V0H15z' fill='%239cd1c6' fill-opacity='0.33' fill-rule='evenodd'/%3E%3C/svg%3E");
+  padding: 1.5rem 0;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  z-index: 7;
+}
+
+.eventWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 5px;
+  width: 100%;
+}
+
+.eventDate {
+  font-size: clamp(1.5rem, 2cqi, 2rem);
+  color: black;
+  font-weight: bold;
+}
+
+.eventTime {
+  font-size: clamp(1.5rem, 2cqi, 2rem);
+  line-height: 3rem;
+  color: black;
+}
+
+.eventText {
+  font-size: clamp(1.5rem, 2cqi, 2rem);
+  line-height: 2rem;
+  color: black;
+  width: 100%;
+  padding: 0 3rem 0 1rem;
+  overflow-wrap: break-word;
+}
+
+.eventButtons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.eventButtons i {
+  font-size: 1.4rem;
+  color: black;
+  cursor: pointer;
+}
+
+#closeCalendar {
+  margin-top: 1.5%;
+  margin-left: 53%;
+  height: 6rem;
+  border-radius: 40%;
+}
